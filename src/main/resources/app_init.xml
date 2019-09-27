@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	  <!--  
+	<bean id="myInterProcess" name="we,our,123good" class="pack.controller.MyInterProcess">
+	
+		  <constructor-arg>
+			<ref bean="moneyImpl"/> <!-- MyInterProcess의 생성자를 통해 밀어넣은부분 --> 	<!-- bean을만들려고함(class)  myinterprocess는 생성자가 argument를 요구함 . 그때 /bean을 띄움 -->
+		</constructor-arg>
+		</bean>  
+			 -->
+			 
+	
+		<bean id="my" class="pack.controller.MyInterProcess"
+			c:inter-ref="moneyImpl"
+		/>
+	
+	
+	
+		<bean id="moneyImpl" name="kbs,mbc,ytn" class="pack.model.MoneyImpl"/> 
+		<!-- 객체변수의 이름은 id,name 아무거나써도 되는데 id는 하나만. 유일한값 특수문자x name은 거의 다 가능 여러개 쓸수도 있음 누군가가 얘를 참조할때 id,name 아무거나로 참조가능 -->
+		
+
+</beans>
